@@ -7,13 +7,16 @@ subtask(TASK_COMPILE_SOLIDITY_GET_SOLC_BUILD).setAction(async ({ solcVersion }, 
   if (solcVersion !== '0.8.20') return runSuper();
   return {
     compilerPath: require.resolve('solc/soljson.js'),
-    isSolcJs: true,
-    version: solcVersion,
-    longVersion: require('solc').version()
+                                                        isSolcJs: true,
+                                                        version: solcVersion,
+                                                        longVersion: require('solc').version()
   };
 });
 
 module.exports = {
+  paths: {
+    sources: './src'
+  },
   solidity: {
     version: '0.8.20',
     settings: {
