@@ -1,0 +1,21 @@
+{
+  "name": "simple-oracle",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Simple Oracle contracts, local tests and Solidity coverage",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "coverage": "hardhat coverage && node scripts/check-coverage.cjs"
+  },
+  "engines": {
+    "node": ">=22 <25"
+  },
+  "devDependencies": {
+    "ethers": "6.13.5",
+    "hardhat": "2.29.1",
+    "solc": "0.8.20",
+    "solidity-coverage": "0.8.17",
+    "istanbul-lib-coverage": "3.2.2"
+  }
+}
