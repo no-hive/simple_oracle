@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/SimpleOracleConsumer.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> SimpleOracleConsumer.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>8/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>10/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/3</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>18/18</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">32×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">50×</span>
+<span class="cline-any cline-yes">49×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">94×</span>
+<span class="cline-any cline-yes">92×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">46×</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+&nbsp;
+/// @title Simple Oracle Read Interface
+/// @notice Exposes batch price reads from Simple Oracle.
+interface ISimpleOracle {
+    /// @notice Returns prices in the same order as the requested asset IDs.
+    /// @param assetIds The asset IDs to read.
+    /// @return prices The corresponding prices.
+    function getPrices(
+        uint256[] calldata assetIds
+    ) external view returns (uint256[] memory prices);
+}
+&nbsp;
+/// @title Simple Oracle Consumer
+/// @notice Saves initial oracle prices and compares them with later prices.
+/// @dev Anyone may save the initial snapshot once and submit later comparisons.
+contract SimpleOracleConsumer {
+    /// @notice The oracle used to read asset prices.
+    ISimpleOracle public immutable oracle;
+&nbsp;
+    /// @notice The asset IDs in the order used for snapshots and comparisons.
+    uint256[] public assetIds;
+&nbsp;
+    /// @notice The initial prices, indexed in the same order as assetIds.
+    uint256[] public savedPrices;
+&nbsp;
+    /// @notice The timestamp at which the initial prices were saved.
+    uint256 public savedAt;
+&nbsp;
+    /// @notice The block number at which the initial prices were saved.
+    /// @dev This is the snapshot block, not the oracle's last update block.
+    uint256 public savedAtBlock;
+&nbsp;
+    /// @notice The minimum number of seconds before comparisons are available.
+    uint256 public immutable comparisonDelay;
+&nbsp;
+    /// @notice Whether the initial prices have already been saved.
+    bool public initialized;
+&nbsp;
+    /// @notice The results of the latest successful comparison, in assetIds order.
+    /// @dev Empty until the first successful comparison.
+    uint256[] public lastResults;
+&nbsp;
+    /// @notice Emitted when the initial prices are permanently saved.
+    /// @param caller The address that saved the prices.
+    /// @param prices The saved prices in assetIds order.
+    event PricesSaved(address indexed caller, uint256[] prices);
+&nbsp;
+    /// @notice Emitted for each successful comparison transaction.
+    /// @param caller The address that submitted the comparison.
+    /// @param currentPrices The oracle prices used in the comparison.
+    /// @param results One for a higher price and zero for a lower price.
+    event PricesCompared(
+        address indexed caller,
+        uint256[] currentPrices,
+        uint256[] results
+    );
+&nbsp;
+    /// @notice Configures the oracle, asset IDs and waiting period.
+    /// @dev Does not save prices. Anyone may call savePrices after deployment.
+    /// @param oracleAddress The deployed Simple Oracle address.
+    /// @param requestedAssetIds The asset IDs to save, in the desired order.
+    /// @param delaySeconds The waiting period before anyone can compare prices.
+    constructor(
+        address oracleAddress,
+        uint256[] memory requestedAssetIds,
+        uint256 delaySeconds
+    ) {
+        oracle = ISimpleOracle(oracleAddress);
+        assetIds = requestedAssetIds;
+        comparisonDelay = delaySeconds;
+    }
+&nbsp;
+    /// @notice Reads and permanently saves the initial oracle prices.
+    /// @dev Anyone may call this function, but it can succeed only once.
+    ///      The waiting period starts when this transaction is executed.
+    function savePrices() external {
+        require(!initialized, "Already initialized");
+&nbsp;
+        savedPrices = oracle.getPrices(assetIds);
+        savedAt = block.timestamp;
+        savedAtBlock = block.number;
+        initialized = true;
+&nbsp;
+        emit PricesSaved(msg.sender, savedPrices);
+    }
+&nbsp;
+    /// @notice Compares current prices with the initial snapshot.
+    /// @dev Anyone may call this function after the waiting period.
+    ///      Comparisons never replace the initial snapshot.
+    ///      Saves the results and emits an event without replacing the snapshot.
+    ///      Reverts the entire comparison if any price is unchanged.
+    /// @return results One for each higher price and zero for each lower price,
+    ///         in the same order as assetIds.
+    function checkPrices() external returns (uint256[] memory results) {
+        require(initialized, "Not initialized");
+        require(block.timestamp - savedAt &gt;= comparisonDelay, "Too early");
+&nbsp;
+        uint256[] memory currentPrices = oracle.getPrices(assetIds);
+        results = new uint256[](assetIds.length);
+&nbsp;
+        for (uint256 i = 0; i &lt; assetIds.length; i++) {
+            require(currentPrices[i] != savedPrices[i], "Price unchanged");
+            results[i] = currentPrices[i] &gt; savedPrices[i] ? 1 : 0;
+        }
+&nbsp;
+        lastResults = results;
+        emit PricesCompared(msg.sender, currentPrices, results);
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Oct 21 2026 21:15:54 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

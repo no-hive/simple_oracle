@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/SimpleOracle.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> SimpleOracle.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>9/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>12/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>4/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>17/17</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">72×</span>
+<span class="cline-any cline-yes">72×</span>
+<span class="cline-any cline-yes">72×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">72×</span>
+<span class="cline-any cline-yes">72×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">83×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">83×</span>
+<span class="cline-any cline-yes">174×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">172×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">85×</span>
+<span class="cline-any cline-yes">83×</span>
+<span class="cline-any cline-yes">81×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">79×</span>
+<span class="cline-any cline-yes">234×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">230×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+&nbsp;
+/// @title Simple Oracle
+/// @notice Stores prices and update block numbers for a fixed set of assets.
+/// @dev Asset IDs and names are assigned during deployment and cannot be changed.
+contract SimpleOracle {
+    /// @notice Contains an asset's latest price and update block number.
+    struct AssetData {
+        /// @notice The latest price submitted by the trusted updater.
+        uint256 price;
+        /// @notice The block number of the latest price update.
+        uint256 lastUpdatedBlock;
+    }
+&nbsp;
+    /// @notice The contract owner authorized to change the trusted updater.
+    address public immutable owner;
+&nbsp;
+    /// @notice The address authorized to update all asset prices.
+    address public trustedUpdater;
+&nbsp;
+    /// @notice The fixed number of assets registered during deployment.
+    uint256 public immutable assetCount;
+&nbsp;
+    /// @notice Maps each asset ID to its permanently assigned name.
+    mapping(uint256 =&gt; string) public assetNames;
+&nbsp;
+    /// @notice Maps each asset ID to its latest price and update block number.
+    /// @dev Both fields remain zero until the first price update.
+    mapping(uint256 =&gt; AssetData) public assetData;
+&nbsp;
+    /// @notice Registers asset names and sets the initial trusted updater.
+    /// @dev Asset IDs range from zero to names.length minus one,
+    ///      following the order of the supplied names.
+    /// @param names The asset names in their permanent order.
+    /// @param initialTrustedUpdater The address initially authorized to update prices.
+    constructor(
+        string[] memory names,
+        address initialTrustedUpdater
+    ) {
+        owner = msg.sender;
+        trustedUpdater = initialTrustedUpdater;
+        assetCount = names.length;
+&nbsp;
+        for (uint256 i = 0; i &lt; names.length; i++) {
+            assetNames[i] = names[i];
+        }
+    }
+&nbsp;
+    /// @notice Sets the address authorized to update prices.
+    /// @dev Only the contract owner may call this function.
+    /// @param updater The new trusted updater address.
+    function setTrustedUpdater(address updater) external {
+        require(msg.sender == owner, "Only owner");
+&nbsp;
+        trustedUpdater = updater;
+    }
+&nbsp;
+    /// @notice Returns prices for the requested asset IDs in the supplied order.
+    /// @dev Reverts if any asset ID is not registered. Duplicate IDs are allowed.
+    ///      An empty request returns an empty array.
+    /// @param assetIds The asset IDs to read, in any order.
+    /// @return prices The prices, with prices[i] corresponding to assetIds[i].
+    function getPrices(
+        uint256[] calldata assetIds
+    ) external view returns (uint256[] memory prices) {
+        prices = new uint256[](assetIds.length);
+&nbsp;
+        for (uint256 i = 0; i &lt; assetIds.length; i++) {
+            require(assetIds[i] &lt; assetCount, "Unknown asset");
+&nbsp;
+            prices[i] = assetData[assetIds[i]].price;
+        }
+    }
+&nbsp;
+    /// @notice Updates every asset's price and records the current block number.
+    /// @dev Only the trusted updater may call this function.
+    ///      Both arrays must contain exactly assetCount elements.
+    ///      Asset IDs must appear in ascending order, starting from zero.
+    ///      Any failed check reverts the entire update.
+    /// @param assetIds All registered asset IDs in their permanent order.
+    /// @param prices The prices corresponding to the supplied asset IDs.
+    function updatePrices(
+        uint256[] calldata assetIds,
+        uint256[] calldata prices
+    ) external {
+        require(msg.sender == trustedUpdater, "Only trusted updater");
+        require(assetIds.length == assetCount, "Wrong asset count");
+        require(prices.length == assetCount, "Wrong price count");
+&nbsp;
+        for (uint256 i = 0; i &lt; assetCount; i++) {
+            require(assetIds[i] == i, "Wrong asset order");
+&nbsp;
+            assetData[i] = AssetData({
+                price: prices[i],
+                lastUpdatedBlock: block.number
+            });
+        }
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Oct 21 2026 21:15:54 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
